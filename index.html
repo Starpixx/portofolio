@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portofolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+</head>
+<body class="bg-black text-[#EAEAEA]">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-item active">
+            <i class="icon home"></i>
+            <span>Home</span>
+        </a>
+        <a href="about.html" class="nav-item">
+            <i class="icon user"></i>
+            <span>About</span>
+        </a>
+        <a href="project.html" class="nav-item">
+            <i class="icon folder"></i>
+            <span>Projects</span>
+        </a>
+        <a href="contact.html" class="nav-item">
+            <i class="icon mail"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="relative w-full mt-24 md:mt-32 mb-24 flex items-center justify-center px-6 lg:px-20 bg-black">
+        <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- Bagian Kiri: Teks -->
+            <div class="text-center lg:text-left space-y-5">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+                    Hi, I'm <span class="text-blue-500">Afandi</span><br>  
+                    <span class="text-gray-400">I Build Modern Web Applications</span>
+                </h1>
+            </div>
+
+            <!-- Bagian Kanan: Foto/Ilustrasi -->
+            <div class="flex justify-center lg:justify-end">
+                  <div class="w-72 md:w-96 max-w-md aspect-square rounded-lg overflow-hidden shadow-lg bg-gray-800">
+                      <img src="image/me.jpg" 
+                          alt="Profile Picture" 
+                          class="w-full h-full object-cover">
+                  </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- My Skills -->
+    <section id="skills" class="w-full py-16 px-6 lg:px-20 bg-black text-white">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12">
+            My Skills
+        </h2>
+
+        <!-- Grid Skills -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 justify-center">
+            
+            <!-- Figma -->
+            <div class="flex flex-col items-center space-y-3 transition-transform transform hover:scale-110">
+                <span class="iconify text-pink-500 text-6xl" data-icon="logos-figma"></span>
+                <p class="text-white font-medium">Figma</p>
+            </div>            
+
+            <!-- Tailwind CSS -->
+            <div class="flex flex-col items-center space-y-3 transition-transform transform hover:scale-110">
+                <span class="iconify text-blue-400 text-6xl" data-icon="logos:tailwindcss-icon"></span>
+                <p class="text-white font-medium">Tailwind CSS</p>
+            </div>
+            
+            <!-- JavaScript -->
+            <div class="flex flex-col items-center space-y-3 transition-transform transform hover:scale-110">
+                <span class="iconify text-yellow-500 text-6xl" data-icon="logos:javascript"></span>
+                <p class="text-white font-medium">JavaScript</p>
+            </div>            
+
+            <!-- Python -->
+            <div class="flex flex-col items-center space-y-3 transition-transform transform hover:scale-110">
+                <span class="iconify text-yellow-300 text-6xl" data-icon="logos:python"></span>
+                <p class="text-white font-medium">Python</p>
+            </div>
+            
+            <!-- Laravel -->
+            <div class="flex flex-col items-center space-y-3 transition-transform transform hover:scale-110">
+                <span class="iconify text-red-500 text-6xl" data-icon="logos:laravel"></span>
+                <p class="text-white font-medium">Laravel</p>
+            </div>            
+            
+            <!-- Django -->
+            <div class="flex flex-col items-center space-y-3 transition-transform transform hover:scale-110">
+                <span class="iconify text-green-400 text-6xl" data-icon="logos-django-icon"></span>
+                <p class="text-white font-medium">Django</p>
+            </div>
+            
+          <!-- Apache -->
+          <div class="flex flex-col items-center space-y-3 transition-transform transform hover:scale-110">
+              <span class="iconify text-red-500 text-6xl" data-icon="logos:apache"></span>
+              <p class="text-white font-medium">Apache</p>
+          </div>
+          
+          <!-- Nginx -->
+          <div class="flex flex-col items-center space-y-3 transition-transform transform hover:scale-110">
+              <span class="iconify text-green-500 text-6xl" data-icon="logos:nginx"></span>
+              <p class="text-white font-medium">Nginx</p>
+          </div>
+          
+        </div>
+    </div>
+  </section>
+  
+<!-- Section Sertifikat -->
+<section id="certificates" class="w-full py-16 px-1 md:px-16 lg:px-20 bg-black text-white">
+    <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12">My Certificates</h2>
+
+        <!-- Slider Container -->
+        <div class="relative overflow-hidden">
+            <div id="certificate-slider" class="flex space-x-6 overflow-x-auto scroll-smooth">
+                
+                <!-- Sertifikat 1 -->
+                <div class="min-w-[300px] md:min-w-[400px] flex-shrink-0">
+                    <img src="image/certif/01.jpg" alt="Certificate 1" class="max-w-sm aspect-[4/3] object-cover rounded-lg shadow-lg">
+                </div>
+
+                <!-- Sertifikat 2 -->
+                <div class="min-w-[300px] md:min-w-[400px] flex-shrink-0">
+                    <img src="image/certif/02.jpg" alt="Certificate 2" class="max-w-sm aspect-[4/3] object-cover rounded-lg shadow-lg">
+                </div>
+
+                <!-- Sertifikat 3 -->
+                <div class="min-w-[300px] md:min-w-[400px] flex-shrink-0">
+                    <img src="image/certif/03.jpg" alt="Certificate 3" class="max-w-sm aspect-[4/3] object-cover rounded-lg shadow-lg">
+                </div>
+
+                <!-- Sertifikat 4 -->
+                <div class="min-w-[300px] md:min-w-[400px] flex-shrink-0">
+                    <img src="image/certif/04.jpg" alt="Certificate 4" class="max-w-sm aspect-[4/3] object-cover rounded-lg shadow-lg">
+                </div>
+
+                <!-- Sertifikat 5 -->
+                <div class="min-w-[300px] md:min-w-[400px] flex-shrink-0">
+                    <img src="image/certif/05.jpg" alt="Certificate 5" class="max-w-sm aspect-[4/3] object-cover rounded-lg shadow-lg">
+                </div>
+
+                <!-- Sertifikat 6 -->
+                <div class="min-w-[300px] md:min-w-[400px] flex-shrink-0">
+                    <img src="image/certif/06.jpg" alt="Certificate 6" class="max-w-sm aspect-[4/3] object-cover rounded-lg shadow-lg">
+                </div>
+
+                <!-- Sertifikat 7 -->
+                <div class="min-w-[300px] md:min-w-[400px] flex-shrink-0">
+                    <img src="image/certif/07.png" alt="Certificate 7" class="max-w-sm aspect-[4/3] object-cover rounded-lg shadow-lg">
+                </div>
+
+                <!-- Sertifikat 8 -->
+                <div class="min-w-[300px] md:min-w-[400px] flex-shrink-0">
+                    <img src="image/certif/08.png" alt="Certificate 8" class="max-w-sm aspect-[4/3] object-cover rounded-lg shadow-lg">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black text-gray-300 py-10 md:pt-6 border-t border-gray-700">
+  <div class="max-w-6xl mx-auto md:px-16 grid grid-cols-1 md:flex md:justify-between gap-8 text-center md:text-left">
+
+    <!-- Brand & Copyright -->
+    <div class="flex flex-col space-y-4">
+      <h2 class="text-xl font-semibold text-white">Afandi</h2>
+      <p class="text-sm text-gray-400">Building modern and responsive web applications.</p>
+      <p class="text-xs text-gray-500">&copy; 2024 Afandi. All Rights Reserved.</p>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="flex flex-col space-y-3">
+      <h3 class="text-lg font-semibold text-white">Quick Links</h3>
+      <a href="index.html" class="hover:text-blue-400 transition text-gray-400">Home</a>
+      <a href="about.html" class="hover:text-blue-400 transition text-gray-400">About</a>
+      <a href="project.html" class="hover:text-blue-400 transition text-gray-400">Projects</a>
+      <a href="contact.html" class="hover:text-blue-400 transition text-gray-400">Contact</a>
+    </div>
+
+    <!-- Social Media -->
+    <div class="flex flex-col space-y-4">
+      <h3 class="text-lg font-semibold text-white">Follow Me</h3>
+      <div class="flex justify-center md:justify-start space-x-4">
+        <a href="https://www.linkedin.com/in/muhammad-afandi-93434b331?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-400 hover:text-blue-500 transition">
+          <span class="iconify text-2xl" data-icon="mdi:linkedin"></span>
+        </a>
+        <a href="https://github.com/Starpixx?tab=repositories" class="text-gray-400 hover:text-blue-500 transition">
+          <span class="iconify text-2xl" data-icon="mdi:github"></span>
+        </a>
+        <a href="https://www.instagram.com/md_fanday?igsh=MWI4MWg1ZmQ3anZtOA==" class="text-gray-400 hover:text-pink-500 transition">
+          <span class="iconify text-2xl" data-icon="mdi:instagram"></span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<p class="py-3 md:hidden md:py-0">batas</p>
+
+    <script src="script.js"></script>
+</body>
+</html>

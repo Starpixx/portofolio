@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portofolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+</head>
+<body class="bg-black text-[#EAEAEA]">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-item">
+            <i class="icon home"></i>
+            <span>Home</span>
+        </a>
+        <a href="about.html" class="nav-item">
+            <i class="icon user"></i>
+            <span>About</span>
+        </a>
+        <a href="project.html" class="nav-item active">
+            <i class="icon folder"></i>
+            <span>Projects</span>
+        </a>
+        <a href="contact.html" class="nav-item">
+            <i class="icon mail"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+    
+<!-- Project Section -->
+<section id="projects" class="w-full py-16 px-6 md:px-10 md:mt-10 lg:px-20 bg-black text-white">
+    <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8">My Projects</h2>
+
+        <!-- Container Slider (Geser Manual dengan Scroll) -->
+        <div class="flex gap-10 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide">
+            <!-- Project 1 -->
+            <div class="min-w-[280px] md:min-w-[320px] bg-gray-800 p-4 rounded-lg shadow-lg snap-center">
+                <img src="image/project/P01.webp" alt="Project 1" class="w-full h-56 object-cover rounded-md">
+                <h3 class="text-xl font-bold mt-4 mb-1">CCTV Deteksi K3 keamanan Proyek</h3>
+                <p class="text-gray-400">Anggota Riset dari Dana Hibah KEMENDIKBUDRISTEK</p>
+                <a href="https://youtu.be/dJrxN1t6oS0?si=dfF2GEa7D4zrkgNL" class="inline-block mt-3 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                    Selengkapnya →
+                </a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="min-w-[280px] md:min-w-[320px] bg-gray-800 p-4 rounded-lg shadow-lg snap-center">
+                <img src="image/project/P02.webp" alt="Project 2" class="w-full h-56 object-cover rounded-md">
+                <h3 class="text-xl font-bold mt-4 mb-1">Pengenalan Emosi Berbasis Ekspresi Wajah</h3>
+                <p class="text-gray-400">Jurnal Ilmiah Computer Vision Pengenalan Emosi Berbasis Ekspresi Wajah</p>
+                <a href="docs/Pengenalan Emosi Berbasis Ekspresi Wajah.pdf" class="inline-block mt-3 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                    Selengkapnya →
+                </a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="min-w-[280px] md:min-w-[320px] bg-gray-800 p-4 rounded-lg shadow-lg snap-center">
+                <img src="image/project/P03.webp" alt="Project 3" class="w-full h-56 object-cover rounded-md">
+                <h3 class="text-xl font-bold mt-4 mb-1">Website GenBI Komisariat UNUJA</h3>
+                <p class="text-gray-400">Project Website Organisasi GenBI Komisariat Universitas Nurul Jadid</p>
+                <a href="project3-detail.html" class="inline-block mt-3 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                    Selengkapnya →
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black text-gray-300 py-10 md:pt-6 border-t border-gray-700">
+  <div class="max-w-6xl mx-auto md:px-16 grid grid-cols-1 md:flex md:justify-between gap-8 text-center md:text-left">
+
+    <!-- Brand & Copyright -->
+    <div class="flex flex-col space-y-4">
+      <h2 class="text-xl font-semibold text-white">Afandi</h2>
+      <p class="text-sm text-gray-400">Building modern and responsive web applications.</p>
+      <p class="text-xs text-gray-500">&copy; 2024 Afandi. All Rights Reserved.</p>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="flex flex-col space-y-3">
+      <h3 class="text-lg font-semibold text-white">Quick Links</h3>
+      <a href="index.html" class="hover:text-blue-400 transition text-gray-400">Home</a>
+      <a href="about.html" class="hover:text-blue-400 transition text-gray-400">About</a>
+      <a href="project.html" class="hover:text-blue-400 transition text-gray-400">Projects</a>
+      <a href="contact.html" class="hover:text-blue-400 transition text-gray-400">Contact</a>
+    </div>
+
+    <!-- Social Media -->
+    <div class="flex flex-col space-y-4">
+      <h3 class="text-lg font-semibold text-white">Follow Me</h3>
+      <div class="flex justify-center md:justify-start space-x-4">
+        <a href="https://www.linkedin.com/in/muhammad-afandi-93434b331?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-400 hover:text-blue-500 transition">
+          <span class="iconify text-2xl" data-icon="mdi:linkedin"></span>
+        </a>
+        <a href="https://github.com/Starpixx?tab=repositories" class="text-gray-400 hover:text-blue-500 transition">
+          <span class="iconify text-2xl" data-icon="mdi:github"></span>
+        </a>
+        <a href="https://www.instagram.com/md_fanday?igsh=MWI4MWg1ZmQ3anZtOA==" class="text-gray-400 hover:text-pink-500 transition">
+          <span class="iconify text-2xl" data-icon="mdi:instagram"></span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<p class="py-3 md:hidden md:py-0">batas</p>
+
+    <script src="script.js"></script>
+</body>
+</html>
