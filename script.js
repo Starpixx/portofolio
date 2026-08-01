@@ -1,128 +1,217 @@
+/* ===================================
+   PORTFOLIO SCRIPT
+   Muhammad Afandi
+=================================== */
+
 document.addEventListener("DOMContentLoaded", () => {
-    const navItems = document.querySelectorAll(".nav-item");
 
-    navItems.forEach(item => {
-        item.addEventListener("click", () => {
-            // Remove active class from all items
-            navItems.forEach(nav => nav.classList.remove("active"));
-            
-            // Add active class to clicked item
-            item.classList.add("active");
-        });
-    });
+    initNavbar();
+    initScrollSpy();
+    initCounter();
+    initBackToTop();
+    initCopyEmail();
+    initFooterYear();
+
 });
 
-// end navbar
+/* ===================================
+   NAVBAR EFFECT
+=================================== */
 
-//JavaScript Slider
-document.addEventListener("DOMContentLoaded", function () {
-    const slider = document.getElementById("certificate-slider");
-    let scrollAmount = 0;
-    const scrollStep = 400; // Jarak scroll per slide
-    const scrollSpeed = 3000; // Interval waktu
-    
-/** 
-function autoScroll() {
-        if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
-            scrollAmount = 0; // Kembali ke awal saat mencapai akhir
+function initNavbar() {
+
+    const navbar = document.querySelector("header");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 60) {
+
+            navbar.classList.add("scrolled");
+
         } else {
-            scrollAmount += scrollStep;
+
+            navbar.classList.remove("scrolled");
+
         }
-        slider.scrollTo({ left: scrollAmount, behavior: "smooth" });
-    }
 
-    setInterval(autoScroll, scrollSpeed); 
-**/
-
-    // Aktifkan geser manual dengan mouse atau touch
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    slider.addEventListener("mousedown", (e) => {
-        isDown = true;
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
     });
 
-    slider.addEventListener("mouseleave", () => {
-        isDown = false;
+}
+
+/* ===================================
+   ACTIVE NAVBAR
+=================================== */
+
+function initScrollSpy() {
+
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll("nav a");
+
+    window.addEventListener("scroll", () => {
+
+        let current = "";
+
+        sections.forEach(section => {
+
+            const sectionTop = section.offsetTop - 120;
+            const sectionHeight = section.offsetHeight;
+
+            if (pageYOffset >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+
+        });
+
+        navLinks.forEach(link => {
+
+            link.classList.remove(
+                "text-emerald-600",
+                "font-semibold"
+            );
+
+            if (
+                link.getAttribute("href") === "#" + current
+            ) {
+
+                link.classList.add(
+                    "text-emerald-600",
+                    "font-semibold"
+                );
+
+            }
+
+        });
+
     });
 
-    slider.addEventListener("mouseup", () => {
-        isDown = false;
+}
+
+/* ===================================
+   COUNTER
+=================================== */
+
+function initCounter() {
+
+    const counters = document.querySelectorAll(".counter");
+
+    counters.forEach(counter => {
+
+        const target = Number(counter.dataset.target);
+
+        let current = 0;
+
+        const speed = target / 80;
+
+        const update = () => {
+
+            current += speed;
+
+            if (current < target) {
+
+                counter.innerText = Math.floor(current);
+
+                requestAnimationFrame(update);
+
+            } else {
+
+                counter.innerText = target;
+
+            }
+
+        };
+
+        update();
+
     });
 
-    slider.addEventListener("mousemove", (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 2; // Kecepatan geser
-        slider.scrollLeft = scrollLeft - walk;
-    });
-});
+}
 
-// untuk project
-document.addEventListener("DOMContentLoaded", function () {
-    const slider = document.getElementById("project-slider-container");
+/* ===================================
+   BACK TO TOP
+=================================== */
 
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+function initBackToTop() {
 
-    slider.addEventListener("mousedown", (e) => {
-        isDown = true;
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-    });
+    const button = document.getElementById("backToTop");
 
-    slider.addEventListener("mouseleave", () => isDown = false);
-    slider.addEventListener("mouseup", () => isDown = false);
+    if (!button) return;
 
-    slider.addEventListener("mousemove", (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 2;
-        slider.scrollLeft = scrollLeft - walk;
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 500) {
+
+            button.classList.remove("hidden");
+
+        } else {
+
+            button.classList.add("hidden");
+
+        }
+
     });
 
-    // Touch Support for Mobile
-    slider.addEventListener("touchstart", (e) => {
-        isDown = true;
-        startX = e.touches[0].clientX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
+    button.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
     });
 
-    slider.addEventListener("touchend", () => isDown = false);
-    slider.addEventListener("touchmove", (e) => {
-        if (!isDown) return;
-        const x = e.touches[0].clientX - slider.offsetLeft;
-        const walk = (x - startX) * 2;
-        slider.scrollLeft = scrollLeft - walk;
+}
+
+/* ===================================
+   COPY EMAIL
+=================================== */
+
+function initCopyEmail() {
+
+    const btn = document.getElementById("copyEmail");
+
+    if (!btn) return;
+
+    btn.addEventListener("click", () => {
+
+        navigator.clipboard.writeText(
+            "muhammadafandi0112@gmail.com"
+        );
+
+        btn.innerHTML = "✅ Email Copied";
+
+        setTimeout(() => {
+
+            btn.innerHTML = "📧 Copy Email";
+
+        }, 2000);
+
     });
-});
 
-// js untuk contact
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("contact-form");
+}
 
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
+/* ===================================
+   FOOTER YEAR
+=================================== */
 
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
+function initFooterYear() {
 
-        const mailtoLink = `mailto:muhammadafandi0112@gmail.com?subject=New Contact from ${name}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
-        
-        window.location.href = mailtoLink;
-    });
+    const year = document.getElementById("year");
 
-    // WhatsApp Message Auto-Fill
-    const whatsappButton = document.getElementById("whatsapp-link");
-    const phoneNumber = "628980476865"; 
-    const message = encodeURIComponent("Haloo, saya tertarik dengan portofolio anda...");
+    if (!year) return;
 
-    whatsappButton.href = `https://wa.me/${phoneNumber}?text=${message}`;
+    year.textContent = new Date().getFullYear();
+
+}
+
+/* ===================================
+   SMOOTH FADE
+=================================== */
+
+window.addEventListener("load", () => {
+
+    document.body.classList.add("fade-up");
+
 });
